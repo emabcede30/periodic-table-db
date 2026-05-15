@@ -28,6 +28,9 @@ echo "Renaming melting and boiling point columns..."
 $PSQL "ALTER TABLE properties RENAME COLUMN melting_point TO melting_point_celsius;"
 $PSQL "ALTER TABLE properties RENAME COLUMN boiling_point TO boiling_point_celsius;"
 
+echo "Setting NOT NULL constraints on temperature columns..."
+$PSQL "ALTER TABLE properties ALTER COLUMN melting_point_celsius SET NOT NULL; ALTER TABLE properties ALTER COLUMN boiling_point_celsius SET NOT NULL;"
+
 # 3. Set NOT NULL constraints
 echo "Adding NOT NULL constraints..."
 $PSQL "ALTER TABLE properties ALTER COLUMN atomic_mass SET NOT NULL;"
