@@ -141,7 +141,7 @@ $PSQL "DELETE FROM properties WHERE atomic_number = 1000; DELETE FROM elements W
 
 PSQL="psql --username=freecodecamp --dbname=periodic_table --tuples-only --no-align -c"
 
-echo "Removing redundant type column from properties..."
-$PSQL "ALTER TABLE properties DROP COLUMN type;"
+# echo "Removing redundant type column from properties..."
+# $PSQL "ALTER TABLE properties DROP COLUMN type;"
 
 echo -e "\nDatabase updates complete!"
